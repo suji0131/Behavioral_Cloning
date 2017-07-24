@@ -17,7 +17,7 @@ However data related to correction maneuver are considered:
 
 ![Selected](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/center_2017_06_02_17_21_47_820.jpg)
 
-Apart from data collection other techniques like changing the brightness, reversing the images etc. are done to make 
+Throughout the data collection process I tried to move the car at a constant speed. Apart from data collection other techniques like changing the brightness, reversing the images etc. are done to make 
 the model more robust. All in all, the final data set has roughly twenty seven thousand samples. Data distribution can be seen below:
 
 ![DataSummary](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/Data_Summary.png)
@@ -39,4 +39,6 @@ Model uses five convolutional layers and three layers of vanilla neural networks
 convolutions and padding is set at valid. First two convolutions have a stride of two by two. Rest of the convolutions are three by three 
 and has a stride of one by one and valid padding. Output from final convolution layer is flattened and connected to a neural network layers. Dropout layers are added to avoid overfitting. ELU is used for activation in all the layers. Final layer has only a single neuron which gives us the steering angles. Adam optimizer is used to and the function we are minimizing is the mean squared error (mse). 
 Network is trained in the training set for two epochs with batch sizes of three hundred.
+
+As it can be seen from the video generated using my model.h5 the car stay on the track. In most of the runs the car more or less stayed in the middle. However, I would like to see how the car would perform when it close by the lane. Furthermore, as a future work I would like to include the gas and brake data into the model for pratical purposes.
 
