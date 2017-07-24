@@ -7,8 +7,10 @@ non-zero steering angle. To make the model more robust, I intentionally drove th
 scenario I selected the useful data into training set. For example, if I drove the car to right side of the lane and corrected its path by 
 turning to left then only positive steering angles are considered. We only need angles that are correct and we don't want the car to steer
 towards the lanes. 
+
 This image and its related data is not selected as it is near lane:
 ![NotSelected](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/center_2017_06_02_17_21_47_354.jpg)
+
 
 However data related to correction maneuver are considered:
 ![Selected](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/center_2017_06_02_17_21_47_820.jpg)
