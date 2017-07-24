@@ -9,14 +9,17 @@ turning to left then only positive steering angles are considered. We only need 
 towards the lanes. 
 
 This image and its related data is not selected as it is near lane:
+
 ![NotSelected](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/center_2017_06_02_17_21_47_354.jpg)
 
 
 However data related to correction maneuver are considered:
+
 ![Selected](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/center_2017_06_02_17_21_47_820.jpg)
 
 Apart from data collection other techniques like changing the brightness, reversing the images etc. are done to make 
-the model more robust. All in all, the final data set has roughly twenty seven thousand samples.
+the model more robust. All in all, the final data set has roughly twenty seven thousand samples. Data distribution can be seen below:
+
 ![DataSummary](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/Data_Summary.png)
 
 ## Architecture
