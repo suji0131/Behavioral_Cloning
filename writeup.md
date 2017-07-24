@@ -22,6 +22,32 @@ the model more robust. All in all, the final data set has roughly twenty seven t
 
 ![DataSummary](https://github.com/suji0131/Behavioral_Cloning/blob/master/Images/Data_Summary.png)
 
+## Generator
+Below generator is used to generate samples of data for each run in a epoch.
+```
+def generator(samples, batch_size=32):
+    num_samples = len(samples)
+    while 1: # Loop forever so the generator never terminates
+        shuffle(samples)
+        for offset in range(0, num_samples, batch_size):
+            batch_samples = samples[offset:offset+batch_size]
+
+            images = []
+            angles = []
+            for batch_sample in batch_samples:
+                center_image = batch_sample[0]
+                center_angle = batch_sample[1]
+                images.append(center_image)
+                angles.append(center_angle)
+                
+            X_train = np.array(images) 
+            y_train = np.array(angles)
+            yield sklearn.utils.shuffle(X_train, y_train)
+
+train_generator = generator(train_samples, batch_size=300)
+validation_generator = generator(validation_samples, batch_size=300)
+```
+
 ## Architecture
 Cropping of images and Normalization of pixel values are done inside the model itself.
 ```
