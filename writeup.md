@@ -11,7 +11,7 @@ the model more robust. All in all, the final data set has roughly twenty seven t
 
 ## Architecture
 Cropping of images and Normalization of pixel values are done inside the model itself.
-'''
+```
 model = Sequential()
 
 '''50 rows pixels from the top of the image, 20 rows pixels from the bottom of the image,0 columns of pixels
@@ -20,7 +20,7 @@ model.add(Cropping2D(cropping=((50,20), (0,0)), input_shape=(160,320,3)))
 
 #Adding lambda layer that normalizes and mean centers the image
 model.add(Lambda(lambda x: (x / 255.0) - 0.5))
-'''
+```
 
 Model uses five convolutional layers and three layers of vanilla neural networks. First three convolutional layers have five by five 
 convolutions and padding is set at valid. First two convolutions have a stride of two by two. Rest of the convolutions are three by three 
